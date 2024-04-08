@@ -1,0 +1,36 @@
+{% include 'admin/cabecera.html' %}
+<br>
+    <h1>Listado de Clientes</h1>
+    <div>Total de Clientes {{total_personas}}</div>
+    <div><a href="{{url_for('agregar')}}">Agregar Persona</a></div>
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{persona.id}}</td>
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.apellido}}</td>
+                    <td>{{persona.email}}</td>
+                    <td>{{persona.telefono}}</td>
+                    <td><a href="ver/{{persona.id}}">Ver</a></td>
+                    <td><a href="editar/{{persona.id}}">Editar</a></td>
+                    <td><a href="eliminar/{{persona.id}}">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% include 'admin/pie.html' %}

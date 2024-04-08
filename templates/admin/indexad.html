@@ -1,0 +1,13 @@
+{% include 'admin/cabecera.html' %}
+<br>
+<div class="row align-items-md-stretch">
+    <div class="col-md-6">
+        <div
+            class="h-100 p-5 text-white bg-dark border rounded-3">
+            <h2>Bienvenido <strong>{{session['usuario']}}</strong> <br>a administrador del sitio</h2>
+            <p>Aqui puede administrar sus clientes</p>
+            <button class="btn btn-outline-success" type="button" >Realizar Gestion</button>
+        </div>
+    </div>
+</div>
+{% include 'admin/pie.html' %}
